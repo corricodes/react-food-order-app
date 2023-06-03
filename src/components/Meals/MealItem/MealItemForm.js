@@ -21,10 +21,12 @@ const MealItemForm = (props) => {
       setAmountIsValid(false);
       return;
     }
+
+    props.onAddToCart(enteredAmountNumber);
   };
 
   return (
-    <form className={classes.form} onSubmit={{ submitHandler }}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
         label="Amount"
